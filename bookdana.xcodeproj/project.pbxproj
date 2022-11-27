@@ -9,23 +9,25 @@
 /* Begin PBXBuildFile section */
 		A87067F32930C21800990150 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87067F22930C21800990150 /* AppDelegate.swift */; };
 		A87067F52930C21800990150 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87067F42930C21800990150 /* SceneDelegate.swift */; };
-		A87067F72930C21800990150 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87067F62930C21800990150 /* ViewController.swift */; };
 		A87067FA2930C21800990150 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A87067F82930C21800990150 /* Main.storyboard */; };
 		A87067FD2930C21800990150 /* bookdana.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A87067FB2930C21800990150 /* bookdana.xcdatamodeld */; };
 		A87067FF2930C21900990150 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A87067FE2930C21900990150 /* Assets.xcassets */; };
 		A87068022930C21900990150 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A87068002930C21900990150 /* LaunchScreen.storyboard */; };
+		A870680A2931D60300990150 /* BookDanaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87068092931D60300990150 /* BookDanaTableViewController.swift */; };
+		A870680C2931E11500990150 /* BookSubscribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A870680B2931E11500990150 /* BookSubscribeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A87067EF2930C21800990150 /* bookdana.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bookdana.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A87067F22930C21800990150 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A87067F42930C21800990150 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A87067F62930C21800990150 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A87067F92930C21800990150 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A87067FC2930C21800990150 /* bookdana.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = bookdana.xcdatamodel; sourceTree = "<group>"; };
 		A87067FE2930C21900990150 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A87068012930C21900990150 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A87068032930C21900990150 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A87068092931D60300990150 /* BookDanaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDanaTableViewController.swift; sourceTree = "<group>"; };
+		A870680B2931E11500990150 /* BookSubscribeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSubscribeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +62,8 @@
 			children = (
 				A87067F22930C21800990150 /* AppDelegate.swift */,
 				A87067F42930C21800990150 /* SceneDelegate.swift */,
-				A87067F62930C21800990150 /* ViewController.swift */,
+				A870680B2931E11500990150 /* BookSubscribeViewController.swift */,
+				A87068092931D60300990150 /* BookDanaTableViewController.swift */,
 				A87067F82930C21800990150 /* Main.storyboard */,
 				A87067FE2930C21900990150 /* Assets.xcassets */,
 				A87068002930C21900990150 /* LaunchScreen.storyboard */,
@@ -141,10 +144,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A870680A2931D60300990150 /* BookDanaTableViewController.swift in Sources */,
 				A87067FD2930C21800990150 /* bookdana.xcdatamodeld in Sources */,
-				A87067F72930C21800990150 /* ViewController.swift in Sources */,
 				A87067F32930C21800990150 /* AppDelegate.swift in Sources */,
 				A87067F52930C21800990150 /* SceneDelegate.swift in Sources */,
+				A870680C2931E11500990150 /* BookSubscribeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

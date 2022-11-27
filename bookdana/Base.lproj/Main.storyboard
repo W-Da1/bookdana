@@ -13,17 +13,25 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="BookSubscribeViewController" customModule="bookdana" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oF4-87-adp">
-                                <rect key="frame" x="30" y="86" width="354" height="34"/>
+                                <rect key="frame" x="30" y="118" width="354" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="textFieldChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="3JP-Qz-6TM"/>
                                 </connections>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PhI-zL-0tz">
+                                <rect key="frame" x="130.5" y="182" width="153" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="バーコード読み取り"/>
+                                <connections>
+                                    <segue destination="h80-Df-cNw" kind="presentation" id="013-k2-fuu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -31,7 +39,9 @@
                             <constraint firstItem="oF4-87-adp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="732-fR-kve"/>
                             <constraint firstItem="oF4-87-adp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="Fvf-ga-Nu0"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oF4-87-adp" secondAttribute="trailing" constant="30" id="KLm-Ek-dZs"/>
+                            <constraint firstItem="PhI-zL-0tz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TLq-sr-b2l"/>
                             <constraint firstItem="oF4-87-adp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hHI-Oc-EYG"/>
+                            <constraint firstItem="PhI-zL-0tz" firstAttribute="top" secondItem="oF4-87-adp" secondAttribute="bottom" constant="30" id="hgH-WG-dc6"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -56,7 +66,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="5in-oG-hbX" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2760.8695652173915" y="112.5"/>
+            <point key="canvasLocation" x="2630" y="98"/>
         </scene>
         <!--BOOKDANA-->
         <scene sceneID="0lA-1m-1dL">
@@ -93,7 +103,7 @@
                     <navigationItem key="navigationItem" title="BOOKDANA" id="ArI-wd-8UG">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="bAA-ZU-qgd">
                             <connections>
-                                <segue destination="csL-cb-Gov" kind="presentation" id="jW2-aY-9Q0"/>
+                                <segue destination="csL-cb-Gov" kind="show" id="jW2-aY-9Q0"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -125,8 +135,9 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="csL-cb-Gov" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="AUW-7r-69Z"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="WzS-tY-cYY">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -136,7 +147,47 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dpA-VP-yAk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1850.7246376811595" y="112.5"/>
+            <point key="canvasLocation" x="1771" y="98"/>
+        </scene>
+        <!--Barcode Leader-->
+        <scene sceneID="zt3-6i-Tl9">
+            <objects>
+                <viewController id="yvt-v2-9K0" customClass="CaptureViewController" customModule="bookdana" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bFj-E1-NYk" userLabel="loadArea">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Y6b-hX-R7S"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Barcode Leader" id="rCK-AW-E41" userLabel="Barcode Leader">
+                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="cancel" id="Ol4-SO-7pL">
+                            <connections>
+                                <action selector="cancelButton:" destination="yvt-v2-9K0" id="sPf-AO-OUq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pHo-7K-Lcq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4555.072463768116" y="97.767857142857139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Lit-DP-8FX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="h80-Df-cNw" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uGd-ML-HL8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="yvt-v2-9K0" kind="relationship" relationship="rootViewController" id="lDm-GA-dh4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xn8-p8-Hfq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3644.9275362318845" y="97.767857142857139"/>
         </scene>
     </scenes>
     <resources>

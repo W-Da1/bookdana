@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A83D46CC293353FF00B88ABA /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83D46CB293353FF00B88ABA /* CaptureViewController.swift */; };
 		A87067F32930C21800990150 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87067F22930C21800990150 /* AppDelegate.swift */; };
 		A87067F52930C21800990150 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87067F42930C21800990150 /* SceneDelegate.swift */; };
 		A87067FA2930C21800990150 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A87067F82930C21800990150 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A83D46CB293353FF00B88ABA /* CaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
 		A87067EF2930C21800990150 /* bookdana.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bookdana.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A87067F22930C21800990150 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A87067F42930C21800990150 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 				A87067F42930C21800990150 /* SceneDelegate.swift */,
 				A870680B2931E11500990150 /* BookSubscribeViewController.swift */,
 				A87068092931D60300990150 /* BookDanaTableViewController.swift */,
+				A83D46CB293353FF00B88ABA /* CaptureViewController.swift */,
 				A87067F82930C21800990150 /* Main.storyboard */,
 				A87067FE2930C21900990150 /* Assets.xcassets */,
 				A87068002930C21900990150 /* LaunchScreen.storyboard */,
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A870680A2931D60300990150 /* BookDanaTableViewController.swift in Sources */,
+				A83D46CC293353FF00B88ABA /* CaptureViewController.swift in Sources */,
 				A87067FD2930C21800990150 /* bookdana.xcdatamodeld in Sources */,
 				A87067F32930C21800990150 /* AppDelegate.swift in Sources */,
 				A87067F52930C21800990150 /* SceneDelegate.swift in Sources */,
@@ -302,6 +306,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -329,6 +334,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

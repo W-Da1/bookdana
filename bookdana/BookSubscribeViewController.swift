@@ -13,7 +13,6 @@ class BookSubscribeViewController: UIViewController {
 
     @IBOutlet weak var bookInformation: UITextField!
     @IBOutlet weak var saveButton: UIBarButtonItem!
-    @IBOutlet weak var readerButton: UIButton!
     
     //画面が遷移された時に呼ばれる
     override func viewDidLoad() {

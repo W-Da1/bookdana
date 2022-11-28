@@ -30,7 +30,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="バーコード読み取り"/>
                                 <connections>
-                                    <segue destination="eNE-pu-2Dp" kind="presentation" id="1Hq-98-iC7"/>
+                                    <segue destination="eNE-pu-2Dp" kind="show" id="6gP-7q-ojk"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -61,7 +61,6 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="bookInformation" destination="oF4-87-adp" id="vJU-Xz-cPj"/>
-                        <outlet property="readerButton" destination="PhI-zL-0tz" id="DTG-qj-1Y6"/>
                         <outlet property="saveButton" destination="U0d-fS-ScA" id="geX-xN-H6v"/>
                     </connections>
                 </viewController>
@@ -96,7 +95,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="editBookInformation" id="CH5-2O-FbI"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="" id="CH5-2O-FbI"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -108,7 +107,7 @@
                     <navigationItem key="navigationItem" title="BOOKDANA" id="ArI-wd-8UG">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="bAA-ZU-qgd">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" identifier="subscribeNewBookInformation" id="Rwt-ZP-rak"/>
+                                <segue destination="BYZ-38-t0r" kind="show" identifier="" id="Rwt-ZP-rak"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -140,12 +139,12 @@
             <objects>
                 <viewController id="yvt-v2-9K0" customClass="CaptureViewController" customModule="bookdana" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bFj-E1-NYk">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="Y6b-hX-R7S"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Barcode Reader" id="rCK-AW-E41"/>
+                    <navigationItem key="navigationItem" title="Barcode Reader" id="JvF-k9-Q0A"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pHo-7K-Lcq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -156,8 +155,9 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eNE-pu-2Dp" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="0vg-cE-Zde"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bhg-yj-Lsr">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -171,7 +171,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Rwt-ZP-rak"/>
+        <segue reference="CH5-2O-FbI"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">

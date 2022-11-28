@@ -9,15 +9,12 @@ import UIKit
 import AVFoundation
 
 class CaptureViewController: UIViewController {
-    
-    @IBOutlet var baseView: UIView!
+
     //検出エリアを指定
-    /*
     let x: CGFloat = 0.05
     let y: CGFloat = 0.4
     let width: CGFloat = 0.9
     let height: CGFloat = 0.15
-    */
     
     var captureSession: AVCaptureSession? //画像や動画の出力データの管理を行うクラス
     var videoLayer: AVCaptureVideoPreviewLayer? //カメラが取得した映像を画面に表示させるクラス
@@ -35,7 +32,11 @@ class CaptureViewController: UIViewController {
     @objc func onPressComplete(_ sender: Any) {
         self.captureSession?.stopRunning()
         self.captureSession = nil
-        self.dismiss(animated: true, completion: nil)
+        if self.presentingViewController is UINavigationController {
+            self.dismiss(animated: true, completion: nil)
+        } else {
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -49,8 +50,19 @@ class CaptureViewController: UIViewController {
         super.viewDidAppear(animated)
         self.startCapture()
         
-         //枠線の表示
-        /*hogehoge*/
+        //枠線の表示
+        let loadArea = UIView()
+        let x: CGFloat = 0.05
+        let y: CGFloat = 0.4
+        let width: CGFloat = 0.9
+        let height: CGFloat = 0.15
+        loadArea.frame = CGRect(x: view.frame.size.width * x, y: view.frame.size.height * y, width: view.frame.size.width * width, height: view.frame.size.height * height)
+        loadArea.layer.borderColor = UIColor.red.cgColor
+        loadArea.layer.borderWidth = 4
+        loadArea.layer.cornerRadius = 6
+        loadArea.clipsToBounds = true
+        self.view.addSubview(loadArea)
+        
     }
     
     func startCapture() {
@@ -81,14 +93,14 @@ class CaptureViewController: UIViewController {
         output.metadataObjectTypes = [.ean8, .ean13]
         
         //バーコードの検出エリアの設定(設定しない場合，画面全体が検出エリアになる)
-        //output.rectOfInterest = CGRect(x: y, y: 1-x-width, width: height, height: width)
+        output.rectOfInterest = CGRect(x: y, y: 1-x-width, width: height, height: width)
         
         //セッションを開始
         session.startRunning()
         
         //画面上にカメラの映像を表示するためにvideoLayerを作る
         let videoLayer = AVCaptureVideoPreviewLayer(session: session)
-        videoLayer.videoGravity = .resizeAspectFill
+        videoLayer.videoGravity = .resizeAspect
         videoLayer.frame = self.view.bounds
         
         //videoLayerを最初に宣言した定数に追加する

@@ -13,10 +13,19 @@ class BookSubscribeViewController: UIViewController {
 
     @IBOutlet weak var bookInformation: UITextField!
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var readerButton: UIButton!
+    
+    //画面が遷移された時に呼ばれる
     override func viewDidLoad() {
         super.viewDidLoad()
         self.saveButton.isEnabled = false
         // Do any additional setup after loading the view.
+        if let bn = self.bookName {
+            self.bookInformation.text = bn
+            self.navigationItem.title = "Edit Book Information"
+        }
+        let text = self.bookInformation.text ?? ""
+        self.saveButton.isEnabled = !text.isEmpty
     }
     
     @IBAction func textFieldChanged(_ sender: Any) {
@@ -25,7 +34,11 @@ class BookSubscribeViewController: UIViewController {
     }
     
     @IBAction func cancelButton(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        if self.presentingViewController is UINavigationController {
+            self.dismiss(animated: true, completion: nil)
+        } else {
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     // MARK: - Navigation
 
@@ -33,10 +46,19 @@ class BookSubscribeViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        guard let button = sender as? UIBarButtonItem, button === self.saveButton else {
+        guard let saveButton = sender as? UIBarButtonItem, saveButton === self.saveButton else {
             return
         }
         self.bookName = self.bookInformation.text ?? ""
+        /*
+        guard let identifier = segue.identifier else {
+            return
+        }
+        guard let readerButton = sender as? UIBarButtonItem, readerButton === self.readerButton else {
+            if identifier == "readerISBN" {
+                let bookInformationVC = segue.destination as! CaptureViewController
+        }
+        */
     }
 
 }

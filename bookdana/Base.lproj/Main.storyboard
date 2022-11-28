@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZkE-Rg-bth">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZkE-Rg-bth">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oF4-87-adp">
-                                <rect key="frame" x="30" y="118" width="354" height="34"/>
+                                <rect key="frame" x="30" y="122" width="354" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -25,11 +26,11 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PhI-zL-0tz">
-                                <rect key="frame" x="130.5" y="182" width="153" height="31"/>
+                                <rect key="frame" x="117" y="186" width="180" height="34.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="バーコード読み取り"/>
                                 <connections>
-                                    <segue destination="h80-Df-cNw" kind="presentation" id="013-k2-fuu"/>
+                                    <segue destination="eNE-pu-2Dp" kind="presentation" id="1Hq-98-iC7"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -60,13 +61,14 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="bookInformation" destination="oF4-87-adp" id="vJU-Xz-cPj"/>
+                        <outlet property="readerButton" destination="PhI-zL-0tz" id="DTG-qj-1Y6"/>
                         <outlet property="saveButton" destination="U0d-fS-ScA" id="geX-xN-H6v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="5in-oG-hbX" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2630" y="98"/>
+            <point key="canvasLocation" x="1741" y="98"/>
         </scene>
         <!--BOOKDANA-->
         <scene sceneID="0lA-1m-1dL">
@@ -77,15 +79,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BookTableViewCell" textLabel="XDD-YA-M4J" style="IBUITableViewCellStyleDefault" id="2f8-hs-b3R">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="BookTableViewCell" textLabel="XDD-YA-M4J" style="IBUITableViewCellStyleDefault" id="2f8-hs-b3R">
+                                <rect key="frame" x="0.0" y="50" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2f8-hs-b3R" id="m7s-9a-iZG">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="383.5" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XDD-YA-M4J">
-                                            <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                            <rect key="frame" x="20" y="0.0" width="355.5" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                             <nil key="textColor"/>
@@ -93,6 +95,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="editBookInformation" id="CH5-2O-FbI"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -103,7 +108,7 @@
                     <navigationItem key="navigationItem" title="BOOKDANA" id="ArI-wd-8UG">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="bAA-ZU-qgd">
                             <connections>
-                                <segue destination="csL-cb-Gov" kind="show" id="jW2-aY-9Q0"/>
+                                <segue destination="BYZ-38-t0r" kind="show" identifier="subscribeNewBookInformation" id="Rwt-ZP-rak"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -118,7 +123,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZkE-Rg-bth" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Nlo-c7-SVx">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -130,66 +135,44 @@
             </objects>
             <point key="canvasLocation" x="50.724637681159422" y="97.767857142857139"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="lb4-HP-LLe">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="csL-cb-Gov" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="AUW-7r-69Z"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WzS-tY-cYY">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="fhM-CF-KRl"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dpA-VP-yAk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1771" y="98"/>
-        </scene>
-        <!--Barcode Leader-->
+        <!--Barcode Reader-->
         <scene sceneID="zt3-6i-Tl9">
             <objects>
                 <viewController id="yvt-v2-9K0" customClass="CaptureViewController" customModule="bookdana" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="bFj-E1-NYk" userLabel="loadArea">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                    <view key="view" contentMode="scaleToFill" id="bFj-E1-NYk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="Y6b-hX-R7S"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Barcode Leader" id="rCK-AW-E41" userLabel="Barcode Leader">
-                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="cancel" id="Ol4-SO-7pL">
-                            <connections>
-                                <action selector="cancelButton:" destination="yvt-v2-9K0" id="sPf-AO-OUq"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Barcode Reader" id="rCK-AW-E41"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pHo-7K-Lcq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4555.072463768116" y="97.767857142857139"/>
+            <point key="canvasLocation" x="3538" y="98"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="Lit-DP-8FX">
+        <scene sceneID="Jii-5P-rCb">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="h80-Df-cNw" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eNE-pu-2Dp" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uGd-ML-HL8">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bhg-yj-Lsr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="yvt-v2-9K0" kind="relationship" relationship="rootViewController" id="lDm-GA-dh4"/>
+                        <segue destination="yvt-v2-9K0" kind="relationship" relationship="rootViewController" id="Sh7-sW-MvA"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xn8-p8-Hfq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xzM-q0-2gJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3644.9275362318845" y="97.767857142857139"/>
+            <point key="canvasLocation" x="2675" y="98"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Rwt-ZP-rak"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

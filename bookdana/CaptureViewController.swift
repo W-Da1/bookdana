@@ -1,4 +1,4 @@
-//
+                    //
 //  CaptureViewController.swift
 //  bookdana
 //
@@ -10,17 +10,14 @@ import AVFoundation
 
 class CaptureViewController: UIViewController {
     
-
-    @IBAction func cancelButton(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    let loadArea = UIView()
+    @IBOutlet var baseView: UIView!
     //検出エリアを指定
+    /*
     let x: CGFloat = 0.05
     let y: CGFloat = 0.4
     let width: CGFloat = 0.9
     let height: CGFloat = 0.15
+    */
     
     var captureSession: AVCaptureSession? //画像や動画の出力データの管理を行うクラス
     var videoLayer: AVCaptureVideoPreviewLayer? //カメラが取得した映像を画面に表示させるクラス
@@ -28,8 +25,8 @@ class CaptureViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "バーコード読み取り"
-        self.navigationItem.rightBarButtonItem = {
+        self.title = "Barcode Leader"
+        self.navigationItem.leftBarButtonItem = {
             let button = UIBarButtonItem(title: "完了", style: .plain, target: self, action: #selector(onPressComplete(_:)))
             return button
         }()
@@ -52,14 +49,8 @@ class CaptureViewController: UIViewController {
         super.viewDidAppear(animated)
         self.startCapture()
         
-        //枠線の表示
-        loadArea.frame = CGRect(x: view.frame.size.width * x, y: view.frame.size.height * y, width: view.frame.size.width, height: view.frame.size.height * height)
-        loadArea.layer.borderColor = UIColor.red.cgColor
-        loadArea.layer.borderWidth = 4
-        loadArea.layer.cornerRadius = 6
-        loadArea.clipsToBounds = true
-        self.view.addSubview(loadArea)
-        self.view.addSubview(loadArea)
+         //枠線の表示
+        /*hogehoge*/
     }
     
     func startCapture() {
@@ -90,7 +81,7 @@ class CaptureViewController: UIViewController {
         output.metadataObjectTypes = [.ean8, .ean13]
         
         //バーコードの検出エリアの設定(設定しない場合，画面全体が検出エリアになる)
-        output.rectOfInterest = CGRect(x: y, y: 1-x-width, width: height, height: width)
+        //output.rectOfInterest = CGRect(x: y, y: 1-x-width, width: height, height: width)
         
         //セッションを開始
         session.startRunning()

@@ -9,13 +9,19 @@ import UIKit
 
 class BookDanaTableViewController: UITableViewController {
     
-    var books = ["Swift徹底入門", "iOSテスト全書", "自然言語処理の基礎[新訂版]"]
+    let userDefaults = UserDefaults.standard
+    var books = [String]()
 
     @IBAction func unwindToBookList(sender: UIStoryboardSegue) {
         guard let sourceVC = sender.source as? BookSubscribeViewController, let book = sourceVC.bookName else {
             return
         }
-        self.books.append(book)
+        if let selectedIndexPath = self.tableView.indexPathForSelectedRow {
+            self.books[selectedIndexPath.row] = book
+        } else {
+            self.books.append(book)
+        }
+        self.userDefaults.set(self.books, forKey: "books")
         self.tableView.reloadData()
     }
 
@@ -27,6 +33,9 @@ class BookDanaTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        if self.userDefaults.object(forKey: "books") != nil {
+            self.books = self.userDefaults.stringArray(forKey: "books")!
+        }
     }
 
     // MARK: - Table view data source
@@ -67,6 +76,7 @@ class BookDanaTableViewController: UITableViewController {
         if editingStyle == .delete {
             // Delete the row from the data source
             self.books.remove(at: indexPath.row)
+            self.userDefaults.set(self.books, forKey: "books")
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -88,14 +98,18 @@ class BookDanaTableViewController: UITableViewController {
     }
     */
 
-    /*
-    // MARK: - Navigation
-
     // In a storyboard-based application, you will often want to do a little preparation before navigation
+    //画面が遷移する前に呼ばれるメソッド
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        guard let identifier = segue.identifier else {
+            return
+        }
+        if identifier == "editBookInformation" {
+            let bookInformationVC = segue.destination as! BookSubscribeViewController
+            bookInformationVC.bookName = self.books[(self.tableView.indexPathForSelectedRow?.row)!]
+        }
     }
-    */
 
 }

@@ -64,8 +64,8 @@
 			children = (
 				A87067F22930C21800990150 /* AppDelegate.swift */,
 				A87067F42930C21800990150 /* SceneDelegate.swift */,
-				A870680B2931E11500990150 /* BookSubscribeViewController.swift */,
 				A87068092931D60300990150 /* BookDanaTableViewController.swift */,
+				A870680B2931E11500990150 /* BookSubscribeViewController.swift */,
 				A83D46CB293353FF00B88ABA /* CaptureViewController.swift */,
 				A87067F82930C21800990150 /* Main.storyboard */,
 				A87067FE2930C21900990150 /* Assets.xcassets */,
@@ -299,6 +299,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A24PK292H6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = bookdana/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -327,6 +328,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A24PK292H6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = bookdana/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

@@ -49,15 +49,13 @@ class BookSubscribeViewController: UIViewController {
             return
         }
         self.bookName = self.bookInformation.text ?? ""
-        /*
-        guard let identifier = segue.identifier else {
-            return
+    }
+    
+    @IBAction func unwindToBarcodeReader(segue: UIStoryboardSegue) {
+        if let captureVC = segue.source as? CaptureViewController {
+            self.bookInformation.text = captureVC.ISBN
+            print("bookInformationへのセット完了")
         }
-        guard let readerButton = sender as? UIBarButtonItem, readerButton === self.readerButton else {
-            if identifier == "readerISBN" {
-                let bookInformationVC = segue.destination as! CaptureViewController
-        }
-        */
     }
 
 }

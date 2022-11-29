@@ -30,7 +30,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="バーコード読み取り"/>
                                 <connections>
-                                    <segue destination="eNE-pu-2Dp" kind="show" id="6gP-7q-ojk"/>
+                                    <segue destination="eNE-pu-2Dp" kind="show" identifier="setISBN" id="6gP-7q-ojk"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -54,7 +54,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="U0d-fS-ScA">
                             <connections>
-                                <segue destination="5in-oG-hbX" kind="unwind" unwindAction="unwindToBookListWithSender:" id="VwO-fd-gxy"/>
+                                <segue destination="5in-oG-hbX" kind="unwind" unwindAction="unwindToBookListWithSender:" id="gk8-dQ-6Oe"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -95,7 +95,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="" id="CH5-2O-FbI"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="editBookInformation" id="CH5-2O-FbI"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -144,11 +144,21 @@
                         <viewLayoutGuide key="safeArea" id="Y6b-hX-R7S"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Barcode Reader" id="JvF-k9-Q0A"/>
+                    <navigationItem key="navigationItem" title="Barcode Reader" id="JvF-k9-Q0A">
+                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="cancel" id="j8P-Y9-7zd">
+                            <connections>
+                                <action selector="onPreComplete:" destination="yvt-v2-9K0" id="bjw-zC-cEO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="jxd-3a-ZZp" kind="unwind" identifier="setISBN" unwindAction="unwindToBarcodeReaderWithSegue:" id="qkL-YP-dv1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pHo-7K-Lcq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="jxd-3a-ZZp" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3538" y="98"/>
+            <point key="canvasLocation" x="3449" y="98"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Jii-5P-rCb">
@@ -167,7 +177,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xzM-q0-2gJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2675" y="98"/>
+            <point key="canvasLocation" x="2662" y="98"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

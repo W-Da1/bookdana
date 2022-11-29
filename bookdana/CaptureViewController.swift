@@ -23,13 +23,9 @@ class CaptureViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Barcode Leader"
-        self.navigationItem.leftBarButtonItem = {
-            let button = UIBarButtonItem(title: "完了", style: .plain, target: self, action: #selector(onPressComplete(_:)))
-            return button
-        }()
     }
     
-    @objc func onPressComplete(_ sender: Any) {
+    @IBAction func onPreComplete(_ sender: Any) {
         self.captureSession?.stopRunning()
         self.captureSession = nil
         if self.presentingViewController is UINavigationController {
@@ -90,7 +86,7 @@ class CaptureViewController: UIViewController {
         output.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
         
         //取得したメタデータを置くAVCaptureMetadataOutputの設定(何を検出するか JANコード→ean8&ean13)
-        output.metadataObjectTypes = [.ean8, .ean13]
+        output.metadataObjectTypes = [.ean13]
         
         //バーコードの検出エリアの設定(設定しない場合，画面全体が検出エリアになる)
         output.rectOfInterest = CGRect(x: y, y: 1-x-width, width: height, height: width)
@@ -109,7 +105,6 @@ class CaptureViewController: UIViewController {
         
         //開放用に保持
         self.captureSession = session
-        
     }
 }
 
@@ -137,22 +132,23 @@ extension CaptureViewController: AVCaptureMetadataOutputObjectsDelegate {
             //UIAlertControllerのスタイルがalert
             let alert: UIAlertController = UIAlertController(title: "読み取り成功！", message:  self.ISBN, preferredStyle:  UIAlertController.Style.alert)
             // 確定ボタンの処理
-            let confirmAction: UIAlertAction = UIAlertAction(title: "確定", style: UIAlertAction.Style.default, handler:{
+            let confirmAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{
                 // 確定ボタンが押された時の処理をクロージャ実装する
                 (action: UIAlertAction!) -> Void in
                 //実際の処理
+                self.performSegue(withIdentifier: "setISBN", sender: self)
+                self.captureSession?.stopRunning()
+                self.captureSession = nil
+                if self.presentingViewController is UINavigationController {
+                    self.dismiss(animated: true, completion: nil)
+                } else {
+                    self.navigationController?.popViewController(animated: true)
+                }
+                print("\(self.ISBN!)")
                 print("確定")
             })
-            // キャンセルボタンの処理
-            let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: UIAlertAction.Style.cancel, handler:{
-                // キャンセルボタンが押された時の処理をクロージャ実装する
-                (action: UIAlertAction!) -> Void in
-                //実際の処理
-                print("キャンセル")
-            })
 
-            //UIAlertControllerにキャンセルボタンと確定ボタンをActionを追加
-            alert.addAction(cancelAction)
+            //UIAlertControllerに確定ボタンをActionを追加
             alert.addAction(confirmAction)
 
             //実際にAlertを表示する

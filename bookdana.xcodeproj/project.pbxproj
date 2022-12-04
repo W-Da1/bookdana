@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		83CDAEE2663BBF3F2057BC92 /* Pods_bookdana.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24649CFA3EFA4350A6372B5C /* Pods_bookdana.framework */; };
 		A83D46CC293353FF00B88ABA /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83D46CB293353FF00B88ABA /* CaptureViewController.swift */; };
 		A87067F32930C21800990150 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87067F22930C21800990150 /* AppDelegate.swift */; };
 		A87067F52930C21800990150 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87067F42930C21800990150 /* SceneDelegate.swift */; };
@@ -16,9 +17,12 @@
 		A87068022930C21900990150 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A87068002930C21900990150 /* LaunchScreen.storyboard */; };
 		A870680A2931D60300990150 /* BookDanaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87068092931D60300990150 /* BookDanaTableViewController.swift */; };
 		A870680C2931E11500990150 /* BookSubscribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A870680B2931E11500990150 /* BookSubscribeViewController.swift */; };
+		A8EAB9182937826100B58FF9 /* GoogleBookAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EAB9172937826100B58FF9 /* GoogleBookAPI.swift */; };
+		A8EAB91A293C461E00B58FF9 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A8EAB919293C461D00B58FF9 /* Podfile */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		24649CFA3EFA4350A6372B5C /* Pods_bookdana.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bookdana.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A83D46CB293353FF00B88ABA /* CaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
 		A87067EF2930C21800990150 /* bookdana.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bookdana.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A87067F22930C21800990150 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -30,6 +34,10 @@
 		A87068032930C21900990150 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A87068092931D60300990150 /* BookDanaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDanaTableViewController.swift; sourceTree = "<group>"; };
 		A870680B2931E11500990150 /* BookSubscribeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSubscribeViewController.swift; sourceTree = "<group>"; };
+		A8EAB9172937826100B58FF9 /* GoogleBookAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleBookAPI.swift; sourceTree = "<group>"; };
+		A8EAB919293C461D00B58FF9 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text; path = Podfile; sourceTree = "<group>"; };
+		FB597697B61FF5EBD1B2BB61 /* Pods-bookdana.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bookdana.debug.xcconfig"; path = "Target Support Files/Pods-bookdana/Pods-bookdana.debug.xcconfig"; sourceTree = "<group>"; };
+		FD4FF47B6EFB4BBAC6504140 /* Pods-bookdana.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bookdana.release.xcconfig"; path = "Target Support Files/Pods-bookdana/Pods-bookdana.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,17 +45,39 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83CDAEE2663BBF3F2057BC92 /* Pods_bookdana.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1CB6F816CB9FE47F25425AD3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				24649CFA3EFA4350A6372B5C /* Pods_bookdana.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		63CDC185DF55B95FEC2CBE31 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FB597697B61FF5EBD1B2BB61 /* Pods-bookdana.debug.xcconfig */,
+				FD4FF47B6EFB4BBAC6504140 /* Pods-bookdana.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A87067E62930C21800990150 = {
 			isa = PBXGroup;
 			children = (
+				A8EAB919293C461D00B58FF9 /* Podfile */,
 				A87067F12930C21800990150 /* bookdana */,
 				A87067F02930C21800990150 /* Products */,
+				63CDC185DF55B95FEC2CBE31 /* Pods */,
+				1CB6F816CB9FE47F25425AD3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +92,7 @@
 		A87067F12930C21800990150 /* bookdana */ = {
 			isa = PBXGroup;
 			children = (
+				A8EAB9172937826100B58FF9 /* GoogleBookAPI.swift */,
 				A87067F22930C21800990150 /* AppDelegate.swift */,
 				A87067F42930C21800990150 /* SceneDelegate.swift */,
 				A87068092931D60300990150 /* BookDanaTableViewController.swift */,
@@ -83,9 +114,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A87068062930C21900990150 /* Build configuration list for PBXNativeTarget "bookdana" */;
 			buildPhases = (
+				FD819871C30D594B22FABCB8 /* [CP] Check Pods Manifest.lock */,
 				A87067EB2930C21800990150 /* Sources */,
 				A87067EC2930C21800990150 /* Frameworks */,
 				A87067ED2930C21800990150 /* Resources */,
+				80D413686748F2B08DB18169 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -137,10 +170,53 @@
 				A87068022930C21900990150 /* LaunchScreen.storyboard in Resources */,
 				A87067FF2930C21900990150 /* Assets.xcassets in Resources */,
 				A87067FA2930C21800990150 /* Main.storyboard in Resources */,
+				A8EAB91A293C461E00B58FF9 /* Podfile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		80D413686748F2B08DB18169 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-bookdana/Pods-bookdana-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-bookdana/Pods-bookdana-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-bookdana/Pods-bookdana-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD819871C30D594B22FABCB8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-bookdana-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A87067EB2930C21800990150 /* Sources */ = {
@@ -149,6 +225,7 @@
 			files = (
 				A870680A2931D60300990150 /* BookDanaTableViewController.swift in Sources */,
 				A83D46CC293353FF00B88ABA /* CaptureViewController.swift in Sources */,
+				A8EAB9182937826100B58FF9 /* GoogleBookAPI.swift in Sources */,
 				A87067FD2930C21800990150 /* bookdana.xcdatamodeld in Sources */,
 				A87067F32930C21800990150 /* AppDelegate.swift in Sources */,
 				A87067F52930C21800990150 /* SceneDelegate.swift in Sources */,
@@ -294,6 +371,7 @@
 		};
 		A87068072930C21900990150 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB597697B61FF5EBD1B2BB61 /* Pods-bookdana.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -324,6 +402,7 @@
 		};
 		A87068082930C21900990150 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD4FF47B6EFB4BBAC6504140 /* Pods-bookdana.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

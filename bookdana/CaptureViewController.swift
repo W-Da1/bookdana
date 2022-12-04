@@ -144,8 +144,6 @@ extension CaptureViewController: AVCaptureMetadataOutputObjectsDelegate {
                 } else {
                     self.navigationController?.popViewController(animated: true)
                 }
-                print("\(self.ISBN!)")
-                print("確定")
             })
 
             //UIAlertControllerに確定ボタンをActionを追加

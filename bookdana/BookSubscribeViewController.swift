@@ -11,24 +11,23 @@ class BookSubscribeViewController: UIViewController {
 
     var bookName: String?
 
-    @IBOutlet weak var bookInformation: UITextField!
+    @IBOutlet weak var bookISBN: UITextField!
     @IBOutlet weak var saveButton: UIBarButtonItem!
-    
     //画面が遷移された時に呼ばれる
     override func viewDidLoad() {
         super.viewDidLoad()
         self.saveButton.isEnabled = false
         // Do any additional setup after loading the view.
         if let bn = self.bookName {
-            self.bookInformation.text = bn
+            self.bookISBN.text = bn
             self.navigationItem.title = "Edit Book Information"
         }
-        let text = self.bookInformation.text ?? ""
+        let text = self.bookISBN.text ?? ""
         self.saveButton.isEnabled = !text.isEmpty
     }
     
     @IBAction func textFieldChanged(_ sender: Any) {
-        let text = self.bookInformation.text ?? ""
+        let text = self.bookISBN.text ?? ""
         self.saveButton.isEnabled = !text.isEmpty
     }
     
@@ -48,13 +47,13 @@ class BookSubscribeViewController: UIViewController {
         guard let saveButton = sender as? UIBarButtonItem, saveButton === self.saveButton else {
             return
         }
-        self.bookName = self.bookInformation.text ?? ""
+        self.bookName = self.bookISBN.text ?? ""
     }
     
     @IBAction func unwindToBarcodeReader(segue: UIStoryboardSegue) {
         if let captureVC = segue.source as? CaptureViewController {
-            self.bookInformation.text = captureVC.ISBN
-            print("bookInformationへのセット完了")
+            self.bookISBN.text = captureVC.ISBN
+            self.saveButton.isEnabled = true
         }
     }
 

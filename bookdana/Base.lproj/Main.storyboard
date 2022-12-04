@@ -17,32 +17,115 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oF4-87-adp">
-                                <rect key="frame" x="30" y="122" width="354" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oF4-87-adp" userLabel="Book ISBN">
+                                <rect key="frame" x="30" y="531.5" width="354" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="textFieldChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="3JP-Qz-6TM"/>
                                 </connections>
                             </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Sx-Cg-ZQt" userLabel="Book Title">
+                                <rect key="frame" x="30" y="686" width="354" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zmI-HC-G7h" userLabel="Book Publish Date">
+                                <rect key="frame" x="30" y="765.5" width="354" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nYT-7k-esC" userLabel="Book Author">
+                                <rect key="frame" x="30" y="845" width="354" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ISBN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dkj-Pv-P0w">
+                                <rect key="frame" x="30" y="490.5" width="37.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mtr-sw-PZd">
+                                <rect key="frame" x="30" y="660.5" width="33" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PublishDate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sPZ-fG-3FR">
+                                <rect key="frame" x="30" y="740" width="91.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ga-z0-lQk">
+                                <rect key="frame" x="30" y="819.5" width="51.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PhI-zL-0tz">
-                                <rect key="frame" x="117" y="186" width="180" height="34.5"/>
+                                <rect key="frame" x="117" y="426" width="180" height="34.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="バーコード読み取り"/>
                                 <connections>
                                     <segue destination="eNE-pu-2Dp" kind="show" identifier="setISBN" id="6gP-7q-ojk"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wIu-N4-5dk">
+                                <rect key="frame" x="55" y="92" width="304" height="304"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="wIu-N4-5dk" secondAttribute="height" multiplier="300:300" id="Zh7-hb-96A"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lTH-kx-IlM">
+                                <rect key="frame" x="159" y="595.5" width="96.5" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="ISBN検索"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="oF4-87-adp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="732-fR-kve"/>
-                            <constraint firstItem="oF4-87-adp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="Fvf-ga-Nu0"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oF4-87-adp" secondAttribute="trailing" constant="30" id="KLm-Ek-dZs"/>
-                            <constraint firstItem="PhI-zL-0tz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TLq-sr-b2l"/>
-                            <constraint firstItem="oF4-87-adp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hHI-Oc-EYG"/>
-                            <constraint firstItem="PhI-zL-0tz" firstAttribute="top" secondItem="oF4-87-adp" secondAttribute="bottom" constant="30" id="hgH-WG-dc6"/>
+                            <constraint firstItem="nYT-7k-esC" firstAttribute="top" secondItem="2ga-z0-lQk" secondAttribute="bottom" constant="5" id="3HP-KQ-YKj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nYT-7k-esC" secondAttribute="trailing" constant="30" id="5TF-8e-8h6"/>
+                            <constraint firstItem="nYT-7k-esC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="30" id="7n2-v9-F57"/>
+                            <constraint firstItem="oF4-87-adp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="C8h-GH-ZaN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zmI-HC-G7h" secondAttribute="trailing" constant="30" id="DLn-hw-9i7"/>
+                            <constraint firstItem="dkj-Pv-P0w" firstAttribute="top" secondItem="PhI-zL-0tz" secondAttribute="bottom" constant="30" id="Gdi-vV-h9s"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2Sx-Cg-ZQt" secondAttribute="trailing" constant="30" id="Gp5-8N-y2N"/>
+                            <constraint firstItem="zmI-HC-G7h" firstAttribute="top" secondItem="sPZ-fG-3FR" secondAttribute="bottom" constant="5" id="Iit-RD-Qpb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dkj-Pv-P0w" secondAttribute="trailing" symbolic="YES" id="KIt-uY-x8E"/>
+                            <constraint firstItem="nYT-7k-esC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="L35-YD-Piz"/>
+                            <constraint firstItem="dkj-Pv-P0w" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="OtO-6i-tyR"/>
+                            <constraint firstItem="oF4-87-adp" firstAttribute="top" secondItem="dkj-Pv-P0w" secondAttribute="bottom" constant="20" id="PSH-gY-CAb" userLabel="Book ISBN.top = ISBN.bottom + 5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oF4-87-adp" secondAttribute="trailing" constant="30" id="PgM-D8-t5p"/>
+                            <constraint firstItem="wIu-N4-5dk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PkD-De-qbe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="2ga-z0-lQk" secondAttribute="trailing" symbolic="YES" id="Q8e-Ac-Fbm"/>
+                            <constraint firstItem="2Sx-Cg-ZQt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ual-17-R2U"/>
+                            <constraint firstItem="mtr-sw-PZd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="Wcg-Wh-HEA"/>
+                            <constraint firstItem="PhI-zL-0tz" firstAttribute="top" secondItem="wIu-N4-5dk" secondAttribute="bottom" constant="30" id="YRi-8z-ieB"/>
+                            <constraint firstItem="zmI-HC-G7h" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aZs-5k-qm6"/>
+                            <constraint firstItem="PhI-zL-0tz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bDw-hx-X5O"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mtr-sw-PZd" secondAttribute="trailing" symbolic="YES" id="c5p-Ee-Ijp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2Sx-Cg-ZQt" secondAttribute="trailing" constant="30" id="dbk-i9-rXI"/>
+                            <constraint firstItem="lTH-kx-IlM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fwK-9m-yRS"/>
+                            <constraint firstItem="2ga-z0-lQk" firstAttribute="top" secondItem="zmI-HC-G7h" secondAttribute="bottom" constant="20" id="gyV-2x-4qj"/>
+                            <constraint firstAttribute="trailing" secondItem="nYT-7k-esC" secondAttribute="trailing" constant="30" id="hTF-GD-8Ph"/>
+                            <constraint firstItem="sPZ-fG-3FR" firstAttribute="top" secondItem="2Sx-Cg-ZQt" secondAttribute="bottom" constant="20" id="hpL-YX-C5F"/>
+                            <constraint firstItem="wIu-N4-5dk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="55" id="hvz-OS-Tc8"/>
+                            <constraint firstItem="zmI-HC-G7h" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="kFa-su-KZe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="sPZ-fG-3FR" secondAttribute="trailing" symbolic="YES" id="kIV-5p-Zlc"/>
+                            <constraint firstItem="mtr-sw-PZd" firstAttribute="top" secondItem="lTH-kx-IlM" secondAttribute="bottom" constant="30" id="m9c-LQ-o0P"/>
+                            <constraint firstItem="2Sx-Cg-ZQt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mPa-A6-7LX"/>
+                            <constraint firstItem="2Sx-Cg-ZQt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="nCV-ll-N5Q"/>
+                            <constraint firstItem="lTH-kx-IlM" firstAttribute="top" secondItem="oF4-87-adp" secondAttribute="bottom" constant="30" id="pPd-pb-vSt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zmI-HC-G7h" secondAttribute="trailing" constant="30" id="rKK-Pu-Fnh"/>
+                            <constraint firstItem="2Sx-Cg-ZQt" firstAttribute="top" secondItem="mtr-sw-PZd" secondAttribute="bottom" constant="5" id="vdV-CH-cVL"/>
+                            <constraint firstItem="wIu-N4-5dk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="wR4-Q5-upb"/>
+                            <constraint firstItem="oF4-87-adp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xvM-bf-734"/>
+                            <constraint firstItem="sPZ-fG-3FR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="zpc-xm-Xof"/>
+                            <constraint firstItem="2ga-z0-lQk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="zrz-f9-KLd"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -60,14 +143,14 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="bookInformation" destination="oF4-87-adp" id="vJU-Xz-cPj"/>
-                        <outlet property="saveButton" destination="U0d-fS-ScA" id="geX-xN-H6v"/>
+                        <outlet property="bookISBN" destination="oF4-87-adp" id="j8p-x8-29E"/>
+                        <outlet property="saveButton" destination="U0d-fS-ScA" id="QUG-qh-0b6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="5in-oG-hbX" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1741" y="98"/>
+            <point key="canvasLocation" x="1740.5797101449277" y="97.767857142857139"/>
         </scene>
         <!--BOOKDANA-->
         <scene sceneID="0lA-1m-1dL">

@@ -35,7 +35,7 @@
 		A87068092931D60300990150 /* BookDanaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDanaTableViewController.swift; sourceTree = "<group>"; };
 		A870680B2931E11500990150 /* BookSubscribeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSubscribeViewController.swift; sourceTree = "<group>"; };
 		A8EAB9172937826100B58FF9 /* GoogleBookAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleBookAPI.swift; sourceTree = "<group>"; };
-		A8EAB919293C461D00B58FF9 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text; path = Podfile; sourceTree = "<group>"; };
+		A8EAB919293C461D00B58FF9 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		FB597697B61FF5EBD1B2BB61 /* Pods-bookdana.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bookdana.debug.xcconfig"; path = "Target Support Files/Pods-bookdana/Pods-bookdana.debug.xcconfig"; sourceTree = "<group>"; };
 		FD4FF47B6EFB4BBAC6504140 /* Pods-bookdana.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bookdana.release.xcconfig"; path = "Target Support Files/Pods-bookdana/Pods-bookdana.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,7 +66,6 @@
 				FB597697B61FF5EBD1B2BB61 /* Pods-bookdana.debug.xcconfig */,
 				FD4FF47B6EFB4BBAC6504140 /* Pods-bookdana.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

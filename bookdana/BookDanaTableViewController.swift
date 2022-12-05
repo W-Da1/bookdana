@@ -10,10 +10,10 @@ import UIKit
 class BookDanaTableViewController: UITableViewController {
     
     let userDefaults = UserDefaults.standard
-    var books = [String]()
+    var books = [Book]()
 
     @IBAction func unwindToBookList(sender: UIStoryboardSegue) {
-        guard let sourceVC = sender.source as? BookSubscribeViewController, let book = sourceVC.bookName else {
+        guard let sourceVC = sender.source as? BookSubscribeViewController, let book = sourceVC.bookInformation else {
             return
         }
         if let selectedIndexPath = self.tableView.indexPathForSelectedRow {
@@ -21,7 +21,7 @@ class BookDanaTableViewController: UITableViewController {
         } else {
             self.books.append(book)
         }
-        self.userDefaults.set(self.books, forKey: "books")
+        saveBooks(bookData: self.books)
         self.tableView.reloadData()
     }
 
@@ -33,8 +33,8 @@ class BookDanaTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        if self.userDefaults.object(forKey: "books") != nil {
-            self.books = self.userDefaults.stringArray(forKey: "books")!
+        if let bookData = loadBooks() {
+            self.books = bookData
         }
     }
 
@@ -47,6 +47,9 @@ class BookDanaTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        if let bookData = loadBooks() {
+            self.books = bookData
+        }
         return self.books.count
     }
 
@@ -55,8 +58,10 @@ class BookDanaTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BookTableViewCell", for: indexPath)
 
         // Configure the cell...
-        cell.textLabel?.text = self.books[indexPath.row]
-
+        if let bookData = loadBooks() {
+            self.books = bookData
+        }
+        cell.textLabel?.text = self.books[indexPath.row].title
         return cell
     }
 
@@ -76,7 +81,7 @@ class BookDanaTableViewController: UITableViewController {
         if editingStyle == .delete {
             // Delete the row from the data source
             self.books.remove(at: indexPath.row)
-            self.userDefaults.set(self.books, forKey: "books")
+            saveBooks(bookData: books)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -108,8 +113,29 @@ class BookDanaTableViewController: UITableViewController {
         }
         if identifier == "editBookInformation" {
             let bookInformationVC = segue.destination as! BookSubscribeViewController
-            bookInformationVC.bookName = self.books[(self.tableView.indexPathForSelectedRow?.row)!]
+            bookInformationVC.bookInformation = self.books[(self.tableView.indexPathForSelectedRow?.row)!]
         }
     }
 
+}
+
+extension BookDanaTableViewController {
+    func saveBooks(bookData: [Book]) {
+        let jsonEncoder = JSONEncoder()
+        guard let data = try? jsonEncoder.encode(bookData) else {
+            return
+        }
+        UserDefaults.standard.set(data, forKey: "books")
+        print("保存した")
+    }
+    
+    func loadBooks() -> [Book]? {
+        let jsonDecoder = JSONDecoder()
+        guard let data = UserDefaults.standard.data(forKey: "books"),
+              let books = try? jsonDecoder.decode([Book].self, from: data) else {
+            return nil
+        }
+        print("読み込んだ")
+        return books
+    }
 }

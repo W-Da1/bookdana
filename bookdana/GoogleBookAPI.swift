@@ -8,11 +8,10 @@
 import UIKit
 import SwiftyJSON
 
-struct Book {
-    let title: String
-    let publishDate: String
-    let author: String
-    let thumbnail: UIImage
+struct Book: Codable {
+    var title: String?
+    var publishDate: String?
+    var author: String?
 }
 
 class GoogleBookAPI: NSObject {
@@ -39,12 +38,7 @@ class GoogleBookAPI: NSObject {
         let pubDate = json[0]["publishedDate"].string ?? "????"
         let author = json[0]["volumeInfo"]["authors"].array?.compactMap { $0.string }.joined(separator: ",") ?? "????" //複数名の著者の場合まとめる
         
-        if let imageURL = json[0]["imageLinks"]["thumbnail"].string {
-            let imageData = try await downloadData(urlString: imageURL)
-            return Book(title: title, publishDate: pubDate, author: author, thumbnail: UIImage(data: imageData)!)
-        } else {
-            return Book(title: title, publishDate: pubDate, author: author, thumbnail: UIImage())
-        }
+        return Book(title: title, publishDate: pubDate, author: author)
     }
     
     final func downloadData(urlString: String) async throws -> Data {
